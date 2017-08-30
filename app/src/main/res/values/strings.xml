@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GANKOT</string>
+    <string name="recommend">推荐</string>
+    <string name="girl">福利</string>
+    <string name="history">过往</string>
+    <string name="about">关于</string>
+</resources>
