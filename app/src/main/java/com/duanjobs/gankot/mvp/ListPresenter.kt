@@ -7,14 +7,14 @@ import io.reactivex.schedulers.Schedulers
 /**
  * Created by duanjobs on 17/8/29.
  */
-class MeiZhiPresenter : IndexContract.MzPresenter {
+class ListPresenter : IndexContract.ListPresenter {
 
-    var mMeiZhiView: IndexContract.MzView? = null
+    var mView: IndexContract.ListView? = null
     var mModel: ListModel? = null
 
-    constructor(meiziView: IndexContract.MzView) {
-        mMeiZhiView = checkNotNull(meiziView)
-        mMeiZhiView!!.setPresenter(this)
+    constructor(view: IndexContract.ListView) {
+        mView = checkNotNull(view)
+        mView!!.setPresenter(this)
         mModel = ListModel.getInstance()
     }
 
@@ -29,7 +29,7 @@ class MeiZhiPresenter : IndexContract.MzPresenter {
         if (result.error) {
 
         } else {
-            mMeiZhiView!!.setData(result.results)
+            mView!!.setData(result.results)
         }
     }
 

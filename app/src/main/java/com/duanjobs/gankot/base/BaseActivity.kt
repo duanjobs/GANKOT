@@ -4,6 +4,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentTransaction
+import com.duanjobs.gankot.R
 import com.duanjobs.gankot.ui.LoadDialog
 import com.duanjobs.gankot.utils.Const
 
@@ -33,4 +37,5 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onStop()
         loadingDialog!!.dismiss()
     }
+
 }

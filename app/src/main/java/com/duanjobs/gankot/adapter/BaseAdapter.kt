@@ -1,5 +1,4 @@
-package com.vslimit.kotlindemo.adapter
-
+package com.duanjobs.gankot.adapter
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup

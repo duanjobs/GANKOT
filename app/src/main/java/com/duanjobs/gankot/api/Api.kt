@@ -1,6 +1,7 @@
 package com.duanjobs.gankot.api
 
 import com.duanjobs.gankot.bean.ListResult
+import com.duanjobs.gankot.bean.PublishedDate
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -9,6 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 import io.reactivex.Observable
+import okhttp3.ResponseBody
 
 /**
  * Created by duanjobs on 17/8/29.
@@ -36,5 +38,14 @@ interface Api {
     @GET("api/data/{type}/10/{pageNumber}")
     fun getContent(@Path("type") type: String,
                    @Path("pageNumber") pageNumber: Int): Observable<ListResult>
+
+    @GET("api/day/history")
+    fun getPublishedDate():Observable<PublishedDate>
+
+    @GET("api/day/{date}")
+    fun getSomeDateData(@Path("date") date: String):Observable<ResponseBody>
+
+    @GET("history")
+    fun getHistory():Observable<ResponseBody>
 
 }
