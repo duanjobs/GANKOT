@@ -1,5 +1,6 @@
 package com.duanjobs.gankot.base
 
+import android.content.Intent
 import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -10,11 +11,13 @@ import com.bumptech.glide.Glide
 import com.duanjobs.gankot.R
 import com.duanjobs.gankot.adapter.BaseAdapter
 import com.duanjobs.gankot.bean.GankArticle
+import com.duanjobs.gankot.mvp.GankArticleDetailActivity
 import com.duanjobs.gankot.mvp.IndexContract
 import com.duanjobs.gankot.mvp.ListPresenter
 import kotlinx.android.synthetic.main.item_girl.view.*
 import kotlinx.android.synthetic.main.item_list_article.view.*
 import kotlinx.android.synthetic.main.list_fragment_base_layout.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.support.v4.act
 import java.text.SimpleDateFormat
 import java.util.*
@@ -66,22 +69,7 @@ abstract class BaseListFragment(override val layoutId: Int = R.layout.list_fragm
 
     open fun initRecyleView() {
         recyclerView.layoutManager = LinearLayoutManager(act)
-        adapter = BaseAdapter(R.layout.item_list_article, mlist) {
-            view, gankArticle ->
-            //            viewHolder!!.setText(R.id.title,article!!.desc)
-//            viewHolder.setText(R.id.who,article!!.who)
-//            viewHolder.setText(R.id.type,article!!.type)
-//            viewHolder.setText(R.id.publishedAt, DateUtils.getRelativeTimeSpanString(sdf.parse(article!!.publishedAt).time))
-//
-//            val image: ImageView = viewHolder.getView(R.id.image)
-//
-//            if (article!!.images == null || article!!.images.size == 0) {
-//                image.visibility = View.GONE
-//            }else{
-//                image.visibility = View.VISIBLE
-//                val width:Int = context.resources.getDimension(R.dimen.article_image_width).toInt()
-//                Glide.with(context).load("${article!!.images[0]}?imageView2/0/w/$width").into(image)
-//            }
+        adapter = BaseAdapter(R.layout.item_list_article,mlist,{view, gankArticle ->
             view.title.text = gankArticle!!.desc
             view.who.text = gankArticle!!.who
             view.type.text = gankArticle!!.type
@@ -92,8 +80,8 @@ abstract class BaseListFragment(override val layoutId: Int = R.layout.list_fragm
                 view.article_image.visibility = View.VISIBLE
                 val width: Int = context.resources.getDimension(R.dimen.article_image_width).toInt()
                 Glide.with(context).load("${gankArticle!!.images[0]}?imageView2/0/w/$width").into(view.article_image)
-            }
-        }
+            }},{ pos ->  go2Detail(mlist[pos])
+        })
         recyclerView.adapter = adapter
     }
 
@@ -115,5 +103,12 @@ abstract class BaseListFragment(override val layoutId: Int = R.layout.list_fragm
 
     override fun setPresenter(presenter: IndexContract.ListPresenter) {
         mPresenter = checkNotNull(presenter as ListPresenter)
+    }
+
+    fun go2Detail(article: GankArticle) {
+        val intent = Intent(act, GankArticleDetailActivity::class.java)
+        intent.putExtra("desc", article.desc)
+        intent.putExtra("url", article.url)
+        startActivity(intent)
     }
 }

@@ -4,4 +4,6 @@
     <string name="girl">福利</string>
     <string name="history">过往</string>
     <string name="about">关于</string>
+    <string name="intro">\nRXJava,Retrofit,glide,PhotoView,MVP\n\n这是一个用kotlin写的Gank客户端，感谢代码家的API
+    </string>
 </resources>

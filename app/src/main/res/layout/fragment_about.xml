@@ -33,10 +33,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/title_text_color"
         android:layout_marginTop="6dp"
         android:textSize="16sp"
         android:text="duanjobs"/>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/content_text_color"
+        android:layout_marginTop="6dp"
+        android:textSize="16sp"
+        android:text="@string/intro"/>
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.duanjobs.gankot.mvp
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.SimpleItemAnimator
 import android.support.v7.widget.StaggeredGridLayoutManager
@@ -17,7 +18,7 @@ import org.jetbrains.anko.support.v4.act
 /**
  * Created by duanjobs on 17/8/29.
  */
-class MeiZhiContainerFragment : BaseListFragment(){
+class MeiZhiContainerFragment : BaseListFragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -29,11 +30,17 @@ class MeiZhiContainerFragment : BaseListFragment(){
         recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         var simpleAnimator: SimpleItemAnimator = recyclerView.itemAnimator as SimpleItemAnimator
         simpleAnimator.supportsChangeAnimations = false
-        adapter = BaseAdapter(R.layout.item_girl, mlist) { view: View, gankArticle: GankArticle ->
+        adapter = BaseAdapter(R.layout.item_girl, mlist, { view: View, gankArticle: GankArticle ->
             Glide.with(act).load(gankArticle.url).into(view.image)
-        }
+        }, {pos -> go2Photo(mlist[pos]) })
         recyclerView.adapter = adapter
 
+    }
+
+    private fun  go2Photo(gankArticle: GankArticle) {
+        val intent = Intent(act, PhotoActivity::class.java)
+        intent.putExtra("url", gankArticle.url)
+        activity!!.startActivity(intent)
     }
 
     override fun getType(): String {

@@ -1,5 +1,6 @@
 package com.duanjobs.gankot.mvp
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.text.Html
@@ -74,12 +75,12 @@ class RecommendFragment(override val layoutId: Int = R.layout.fragment_recommend
                 .load(imageUrl!!)
                 .into(welFare)
 
-        adapter = BaseAdapter(R.layout.item_recommend, data){view, gankArticle ->
+        adapter = BaseAdapter(R.layout.item_recommend, data,{view, gankArticle ->
             val format = "<font color='#757575' >${gankArticle!!.who}</font>"
             view.content.text = Html.fromHtml("${gankArticle.desc}(${format})")
             view.title.text = gankArticle.type
 
-        }
+        },{pos -> go2Detail(data[pos]) })
         recyclerView.layoutManager = LinearLayoutManager(act)
         recyclerView.isNestedScrollingEnabled = false
         recyclerView.adapter = adapter
@@ -96,5 +97,12 @@ class RecommendFragment(override val layoutId: Int = R.layout.fragment_recommend
             fragment.arguments = args
             return fragment
         }
+    }
+
+    fun go2Detail(article: GankArticle) {
+        val intent = Intent(act, GankArticleDetailActivity::class.java)
+        intent.putExtra("desc", article.desc)
+        intent.putExtra("url", article.url)
+        startActivity(intent)
     }
 }
