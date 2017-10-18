@@ -1,6 +1,7 @@
-package com.duanjobs.gankot.mvp
+package com.duanjobs.gankot.mvp.past
 
 import com.duanjobs.gankot.bean.History
+import com.duanjobs.gankot.mvp.IndexContract
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import org.jsoup.Jsoup
@@ -10,7 +11,7 @@ import org.jsoup.select.Elements
 /**
  * Created by duanjobs on 17/9/5.
  */
-class PastPresenter:IndexContract.PastPresenter {
+class PastPresenter: IndexContract.PastPresenter {
 
     var mView: IndexContract.PastView? = null
     var mModel: IndexContract.PastModel? = null

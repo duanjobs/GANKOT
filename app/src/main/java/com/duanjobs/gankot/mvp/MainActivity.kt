@@ -8,6 +8,10 @@ import android.support.v4.app.FragmentTransaction
 import com.duanjobs.gankot.R
 import com.duanjobs.gankot.base.BaseActivity
 import com.duanjobs.gankot.base.BaseFragment
+import com.duanjobs.gankot.mvp.about.AboutContainerFragment
+import com.duanjobs.gankot.mvp.meizhi.MeiZhiContainerFragment
+import com.duanjobs.gankot.mvp.past.PastContainerFragment
+import com.duanjobs.gankot.mvp.past.PastPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity(override val layoutId: Int = R.layout.activity_main) : BaseActivity() {

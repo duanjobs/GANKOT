@@ -1,4 +1,4 @@
-package com.duanjobs.gankot.mvp
+package com.duanjobs.gankot.mvp.meizhi
 
 import android.os.Bundle
 import android.text.TextUtils

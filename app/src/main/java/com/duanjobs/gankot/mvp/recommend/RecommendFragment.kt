@@ -1,4 +1,4 @@
-package com.duanjobs.gankot.mvp
+package com.duanjobs.gankot.mvp.recommend
 
 import android.content.Intent
 import android.os.Bundle
@@ -18,6 +18,8 @@ import org.jetbrains.anko.support.v4.act
 import org.jetbrains.anko.support.v4.toast
 import org.json.JSONObject
 import com.duanjobs.gankot.adapter.BaseAdapter
+import com.duanjobs.gankot.mvp.GankArticleDetailActivity
+import com.duanjobs.gankot.mvp.IndexContract
 import kotlinx.android.synthetic.main.item_recommend.view.*
 
 /**

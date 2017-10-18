@@ -1,4 +1,4 @@
-package com.duanjobs.gankot.mvp
+package com.duanjobs.gankot.mvp.about
 
 import com.duanjobs.gankot.base.BaseFragment
 import com.duanjobs.gankot.R
@@ -8,6 +8,6 @@ import com.duanjobs.gankot.R
  */
 class AboutContainerFragment(override val layoutId: Int =R.layout.fragment_about) :BaseFragment() {
     companion object {
-        fun getInstance():AboutContainerFragment = AboutContainerFragment()
+        fun getInstance(): AboutContainerFragment = AboutContainerFragment()
     }
 }

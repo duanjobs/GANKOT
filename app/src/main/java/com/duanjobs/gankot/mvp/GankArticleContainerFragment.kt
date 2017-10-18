@@ -9,6 +9,7 @@ import com.duanjobs.gankot.R
 import com.duanjobs.gankot.bean.PublishedDate
 import com.duanjobs.gankot.adapter.MainAdapter
 import com.duanjobs.gankot.extensions.loading
+import com.duanjobs.gankot.mvp.recommend.*
 import com.duanjobs.gankot.utils.Const
 import kotlinx.android.synthetic.main.gank_article_container_fragment_layout.*
 import java.text.SimpleDateFormat

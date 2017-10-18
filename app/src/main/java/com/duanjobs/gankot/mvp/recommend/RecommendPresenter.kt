@@ -1,6 +1,6 @@
-package com.duanjobs.gankot.mvp
+package com.duanjobs.gankot.mvp.recommend
 
-import com.duanjobs.gankot.bean.PublishedDate
+import com.duanjobs.gankot.mvp.IndexContract
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import okhttp3.ResponseBody

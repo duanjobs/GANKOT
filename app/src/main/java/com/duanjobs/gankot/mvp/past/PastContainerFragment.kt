@@ -1,4 +1,4 @@
-package com.duanjobs.gankot.mvp
+package com.duanjobs.gankot.mvp.past
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,7 @@ import com.duanjobs.gankot.R
 import com.duanjobs.gankot.adapter.BaseAdapter
 import com.duanjobs.gankot.bean.History
 import com.duanjobs.gankot.extensions.loading
+import com.duanjobs.gankot.mvp.IndexContract
 import com.duanjobs.gankot.utils.Const
 import kotlinx.android.synthetic.main.fragment_history.*
 import kotlinx.android.synthetic.main.item_history.view.*

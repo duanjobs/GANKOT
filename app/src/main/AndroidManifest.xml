@@ -19,8 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".mvp.GankArticleDetailActivity"/>
-        <activity android:name=".mvp.PastDetailActivity"/>
-        <activity android:name=".mvp.PhotoActivity"/>
+        <activity android:name=".mvp.past.PastDetailActivity"/>
+        <activity android:name=".mvp.meizhi.PhotoActivity"/>
     </application>
 
 </manifest>

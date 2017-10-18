@@ -1,4 +1,4 @@
-package com.duanjobs.gankot.mvp
+package com.duanjobs.gankot.mvp.recommend
 
 import com.duanjobs.gankot.base.BaseListFragment
 import com.duanjobs.gankot.bean.Type
@@ -13,7 +13,7 @@ class VideoFragment : BaseListFragment() {
     }
 
     companion object {
-        fun getInstance():  VideoFragment =  VideoFragment()
+        fun getInstance(): VideoFragment = VideoFragment()
     }
 
 }

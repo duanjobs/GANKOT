@@ -1,9 +1,11 @@
-package com.duanjobs.gankot.mvp
+package com.duanjobs.gankot.mvp.past
 
 import android.os.Bundle
 import android.view.MenuItem
 import com.duanjobs.gankot.base.BaseActivity
 import com.duanjobs.gankot.R
+import com.duanjobs.gankot.mvp.recommend.RecommendFragment
+import com.duanjobs.gankot.mvp.recommend.RecommendPresenter
 import kotlinx.android.synthetic.main.activity_gank_article_detail.*
 
 /**
